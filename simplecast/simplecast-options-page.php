@@ -19,38 +19,54 @@ function simplecast_register_settings() {
 	register_setting( 'simplecast-settings-group', 'simplecast_sponsor' );
 	register_setting( 'simplecast-settings-group', 'simplecast_sponsor_desc' );
 	register_setting( 'simplecast-settings-group', 'simplecast_sponsor_link' );
+	register_setting( 'simplecast-settings-group', 'simplecast_embed_color');
 }
 
 function simplecast_settings_page() {
 
+	// Check that the user is allowed to update options
+if (!current_user_can('manage_options')) {
+    wp_die('You do not have sufficient permissions to access this page.');
+}
+
 ?>
+
+
 <div class="wrap">
-<h2>Reading List Settings</h2>
+<h2>Podcast Settings</h2>
 
 <form method="post" action="options.php">
     <?php settings_fields( 'simplecast-settings-group' ); ?>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Homepage Info</th>
-        <td>
-			<div><label>Next Show Airs: </label><input type="text" name="simplecast_next_date" value="<?php print get_option("simplecast_next_date"); ?>" /></div>
-			
-			<div><label>Next Topic: </label><input type="text" name="simplecast_next_topic" value="<?php print get_option("simplecast_next_topic"); ?>" /></div>
-			
-			<div><label>Sponsor: </label><input type="text" name="simplecast_sponsor" value="<?php print get_option("simplecast_sponsor"); ?>" /></div>
-			
-			<div><label>Sponsor Desc: </label><input type="text" name="simplecast_sponsor_desc" value="<?php print get_option("simplecast_sponsor_desc"); ?>" /></div>
-			
-			<div><label>Sponsor Link: </label><input type="text" name="simplecast_sponsor_link" value="<?php print get_option("simplecast_sponsor_link"); ?>" /></div>
-         </td>
+        	<th scope="row"><label>Next Show Airs: </label></th>
+			<td><input type="text" name="simplecast_next_date" value="<?php print get_option("simplecast_next_date"); ?>" /></td>
         </tr>
-        
+		<tr valign="top">
+        	<th scope="row"><label>Next Topic: </label></th>
+        	<td><input type="text" name="simplecast_next_topic" value="<?php print get_option("simplecast_next_topic"); ?>" /></td>
+		</tr>
+		<tr valign="top">
+        	<th scope="row"><label>Sponsor: </label></th>
+        	<td><input type="text" name="simplecast_sponsor" value="<?php print get_option("simplecast_sponsor"); ?>" /></td>
+		</tr>
+		<tr valign="top">
+        	<th scope="row"><label>Sponsor Desc: </label></th>
+        	<td><input type="text" name="simplecast_sponsor_desc" value="<?php print get_option("simplecast_sponsor_desc"); ?>" /></td>
+		</tr>
+		<tr valign="top">
+        	<th scope="row"><label>Sponsor Link: </label></th>
+        	<td><input type="text" name="simplecast_sponsor_link" value="<?php print get_option("simplecast_sponsor_link"); ?>" /></td>
+		</tr>
+		 <tr valign="top">
+        	<th scope="row"><label>Embed Color: </label></th>
+        	<td><label>Dark <input type="radio" name="simplecast_embed_color" value="dark" <?php if(get_option("simplecast_embed_color") != 'light') print "checked"; ?> /></label> <label> Light <input type="radio" name="simplecast_embed_color" value="light" <?php if(get_option("simplecast_embed_color") == 'light') print "checked"; ?> /></label></td>
+        </tr>
     </table>
     
     <p class="submit">
     <input type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
     </p>
-
 </form>
 </div>
 <?php } ?>
