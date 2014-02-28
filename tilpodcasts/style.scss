@@ -23,6 +23,7 @@ $accent: #fcb11e;
 
 $small: 28em;
 
+
 body{
 	background: $darkGrey;
 	font-family: "Open Sans Condensed", Helvetica, sans-serif;
@@ -307,13 +308,13 @@ footer ul.social li{
 clear: both;
 }
 
-@media screen and (min-width: 28em){
+@media screen and (min-width: $small){
 	.panelist img{
 		max-width: 30%;
 		}
 	}
 
-@media screen and (min-width: 40.5em){
+@media screen and (min-width: $small){
 	
 	.panelist{
 		margin: 1em;
