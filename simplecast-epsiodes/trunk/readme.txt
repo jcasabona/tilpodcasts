@@ -36,5 +36,10 @@ Right now there is only one template tag, called `simplecast_latest_show()`. It 
 
 == Changelog ==
 
+= 0.6 =
+* New setting to choose to download the epsiode onto your server (Epsiodes->Settings). When set to yes, this will happen automatically.
+* BETA- Ability to download ALL previously added simplecast episodes into the WordPress Media area (Episodes->Settings). This is still in beta and can be pretty slow, especially if you have a lot of episodes.
+* Added a new function, `simplecast_direct_url()` to get the download URL of an episode from its embed URL. 
+
 = 0.4 =
 First official release of the plugin

@@ -1,5 +1,5 @@
 === Simplecast Episodes ===
-Contributors: Joe Casabona
+Contributors: jcasabona
 Tags: podcasts, simplecast, audio, episodes
 Stable Tag: trunk
 Donate link: http://casabona.org/plugins/
@@ -21,15 +21,16 @@ There is a list of template tags on the FAQs page.
 
 == Frequently Asked Questions ==
 
-= Where do the podcasts come from?
+= Where do the podcasts come from? =
 
 In order to use this plugin, you need to have a Simplecast account. You can sign up at [simplecast.fm](http://simplecast.fm)
 
-= Do you have template tags or short codes?
+= Do you have template tags or short codes? =
 
 Right now there is only one template tag, called `simplecast_latest_show()`. It will display the latest show. I hope to add more in the near future. they will all be in the simplecast-functions.php file
 
 == Screenshots ==
+
 1. The \"Add Episode\" admin screen
 2. The Podcast Settings admin screen
 3. A sample frontend screen
